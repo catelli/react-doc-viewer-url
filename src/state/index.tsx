@@ -30,8 +30,6 @@ const AppProvider: FC<DocViewerProps> = (props) => {
     pluginRenderers,
   });
 
-  // On inital load, and whenever they change,
-  // replace documents with the new props passed in
   useEffect(() => {
     dispatch(setAllDocuments(documents));
     config && dispatch(setMainConfig(config));
