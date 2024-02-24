@@ -32,7 +32,7 @@ exports.useDocumentLoader = function () {
             return;
         var controller = new AbortController();
         var signal = controller.signal;
-        fetch(documentURI, { method: "HEAD", signal: signal }).then(function (response) {
+        fetch(documentURI, { method: "GET", signal: signal }).then(function (response) {
             var contentTypeRaw = response.headers.get("content-type");
             var contentTypes = (contentTypeRaw === null || contentTypeRaw === void 0 ? void 0 : contentTypeRaw.split(";")) || [];
             var contentType = contentTypes.length ? contentTypes[0] : undefined;
